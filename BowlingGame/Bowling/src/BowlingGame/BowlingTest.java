@@ -75,6 +75,33 @@ public class BowlingTest {
 		rollMany(12, 10);
 		assertEquals(300, g.score());
 	}
+	
+	@Test
+	public void game1() {
+		g.roll(6);
+		g.roll(3);
+		rollStrike();
+		g.roll(5);
+		g.roll(5); //spare
+		rollMany(15, 0);
+		assertEquals(39, g.score());
+	}
+	
+	@Test
+	public void game2() {
+		g.roll(2);
+		g.roll(2);
+		g.roll(9);
+		g.roll(0);
+		g.roll(7);
+		g.roll(3); //spare
+		rollStrike();
+		rollStrike();
+		rollMany(10,0);
+		assertEquals(63, g.score());
+		
+		
+	}
 
 
 
